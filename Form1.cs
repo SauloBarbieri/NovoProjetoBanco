@@ -1,0 +1,218 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ProjetoBanco
+{
+    public partial class Form1 : Form
+    {
+
+        Conta[] contasCorrentes = new ContaCorrente[5];
+        Conta[] contasPoupancas = new ContaPoupanca[5];
+
+        int numeroDeContas = 0;
+        //teste
+
+        public Form1()
+        {
+            InitializeComponent();            
+        }
+
+        
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //contasCorrentes[0] = new ContaCorrente();
+            //contasCorrentes[1] = new ContaCorrente();
+            //contasCorrentes[2] = new ContaCorrente();
+            //contasCorrentes[3] = new ContaCorrente();
+            //contasCorrentes[4] = new ContaCorrente();
+
+
+        }
+
+        public void AdicionaConta(int novoCodigo, string novoTitular)
+        {
+            if (numeroDeContas < contasCorrentes.Length)
+            {
+
+                contasCorrentes[numeroDeContas] = new ContaCorrente();
+
+
+                //contasCorrentes[numeroDeContas].Cadastrar(Convert.ToInt32(textoCodigo.Text), (textoTitular.Text), Convert.ToDouble(textoSaldo.Text));
+
+                contasCorrentes[numeroDeContas].Cadastrar(Convert.ToInt32(novoCodigo), Convert.ToString(novoTitular));
+                MessageBox.Show("Cadastro Realizado com Sucesso!");
+
+
+                // limpa as informações no TextBox
+                textoCodigo.Clear();
+                textoTitular.Clear();
+                textoSaldo.Clear();
+
+
+                // mostrar no ComboBox o índice da Conta na Array
+                comboContas.Items.Add(numeroDeContas);
+
+                numeroDeContas++;
+            }
+            else
+            {
+                MessageBox.Show("Não é possível cadastrar mais contas!");
+            }
+        }
+
+        private void botaoCadastrar_Click(object sender, EventArgs e)
+        {
+
+            //if (numeroDeContas < contasCorrentes.Length)
+            //{
+
+            //    contasCorrentes[numeroDeContas] = new ContaCorrente();
+
+
+            //    contasCorrentes[numeroDeContas].Cadastrar(Convert.ToInt32(textoCodigo.Text), (textoTitular.Text), Convert.ToDouble(textoSaldo.Text));
+            //    MessageBox.Show("Cadastro Realizado com Sucesso!");
+
+
+            //    // limpa as informações no TextBox
+            //    textoCodigo.Clear();
+            //    textoTitular.Clear();
+            //    textoSaldo.Clear();
+
+
+            //    // mostrar no ComboBox o índice da Conta na Array
+            //    comboContas.Items.Add(numeroDeContas);
+
+            //    numeroDeContas++;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Não é possível cadastrar mais contas!");
+            //}
+            
+        }
+
+        private void botaoExibir_Click(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < numeroDeContas; i++)
+            {
+                MessageBox.Show("Código da Conta: " + contasCorrentes[i].CodigoDaConta);
+                MessageBox.Show("Titular da Conta: " + contasCorrentes[i].TitularDaConta);
+                MessageBox.Show("Saldo da Conta R$: " + contasCorrentes[i].SaldoDaConta);
+            }
+            //MessageBox.Show("Tem Algo Errado Aqui");
+
+        }
+
+        private void botaoDepositar_Click(object sender, EventArgs e)
+        {
+            //eu gostaria de pegar o código da conta pra realizar o depósito, mas não sei fazer isso, então estou pegando o índice da array =/
+            int indice = comboContas.SelectedIndex;
+            
+            contasCorrentes[indice].Depositar(Convert.ToDouble(textoValor.Text));
+            MessageBox.Show("Depósito Realizado Com Sucesso!");
+
+            textoSaldo.Text = Convert.ToString(contasCorrentes[indice].SaldoDaConta);
+
+        }
+
+        private void BotaoSacar_Click(object sender, EventArgs e)
+        {
+            int indice = comboContas.SelectedIndex;
+
+            string mensagem = contasCorrentes[indice].Sacar(Convert.ToDouble(textoValor.Text)) ? "Saque Realizado Com Sucesso!" : "Saldo Insuficiente!";
+            MessageBox.Show(mensagem);
+
+        }
+
+        private void BuscaDeConta_Enter(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        public void botaoAutoCadastrar_Click(object sender, EventArgs e)
+        {
+            int codigoConta;
+            string titularConta;
+            double saldoConta;
+
+
+            for (int indice = 0; numeroDeContas < contasCorrentes.Length; indice++)
+            {
+                
+                contasCorrentes[numeroDeContas] = new ContaCorrente();
+
+                codigoConta = 10;
+                titularConta = "Saulo";
+                saldoConta = 200.0;
+
+                if (1 == numeroDeContas)
+                {
+                    codigoConta = 20;
+                    titularConta = "Loreley";
+                    saldoConta = 300.0;
+                }
+                else if (2 == numeroDeContas)
+                {
+                    codigoConta = 30;
+                    titularConta = "Sergio";
+                    saldoConta = 300.0;
+                }
+                else if (3 == numeroDeContas)
+                {
+                    codigoConta = 40;
+                    titularConta = "Maricy";
+                    saldoConta = 400.0;
+                }
+
+                else if (4 == numeroDeContas)
+                {
+                    codigoConta = 50;
+                    titularConta = "Noemia";
+                    saldoConta = 500.0;
+                }
+
+               
+                //contasCorrentes[numeroDeContas].Cadastrar(codigoConta, titularConta, saldoConta);
+
+                // mostrar no ComboBox o índice da Conta na Array
+                comboContas.Items.Add(numeroDeContas);
+
+                numeroDeContas++;
+            }
+
+            MessageBox.Show("Cadastro Realizado com Sucesso!");
+
+        }
+
+        private void comboContas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            //carrega as informações da conta e coloca nos TextBox de acordo com o indice 'lugar na array'
+
+            int indice = comboContas.SelectedIndex;
+
+            textoCodigo.Text = Convert.ToString(contasCorrentes[indice].CodigoDaConta);
+            textoTitular.Text = Convert.ToString(contasCorrentes[indice].TitularDaConta);
+            textoSaldo.Text = Convert.ToString(contasCorrentes[indice].SaldoDaConta);
+
+        }
+
+        private void botaoNovaConta_Click(object sender, EventArgs e)
+        {
+            // this representa a instância de Form1 que está sendo utilizada pelo
+            // Windows Form
+            FormCadastroConta formularioDeCadastro = new FormCadastroConta(this);
+            formularioDeCadastro.ShowDialog();
+        }
+    }
+}
