@@ -17,7 +17,6 @@ namespace ProjetoBanco
         Conta[] contasPoupancas = new ContaPoupanca[5];
 
         int numeroDeContas = 0;
-        //teste 2
 
         public Form1()
         {
@@ -51,10 +50,10 @@ namespace ProjetoBanco
                 MessageBox.Show("Cadastro Realizado com Sucesso!");
 
 
-                // limpa as informações no TextBox
-                textoCodigo.Clear();
-                textoTitular.Clear();
-                textoSaldo.Clear();
+                //limpa as informações no TextBox
+                //textoCodigo.Clear();
+                //textoTitular.Clear();
+                //textoSaldo.Clear();
 
 
                 // mostrar no ComboBox o índice da Conta na Array
@@ -130,6 +129,9 @@ namespace ProjetoBanco
 
             string mensagem = contasCorrentes[indice].Sacar(Convert.ToDouble(textoValor.Text)) ? "Saque Realizado Com Sucesso!" : "Saldo Insuficiente!";
             MessageBox.Show(mensagem);
+
+            textoSaldo.Text = Convert.ToString(contasCorrentes[indice].SaldoDaConta);
+
 
         }
 

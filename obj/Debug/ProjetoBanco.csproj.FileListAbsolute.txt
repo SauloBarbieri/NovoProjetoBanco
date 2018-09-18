@@ -19,3 +19,14 @@ D:\Estudo\Curso Alura C#\10 - Projetos\ProjetoBancoPronto\ProjetoBanco-master\ob
 D:\Estudo\Curso Alura C#\10 - Projetos\ProjetoBancoPronto\ProjetoBanco-master\bin\Debug\ProjetoBanco.exe.config
 D:\Estudo\Curso Alura C#\10 - Projetos\ProjetoBancoPronto\ProjetoBanco-master\bin\Debug\ProjetoBanco.exe
 D:\Estudo\Curso Alura C#\10 - Projetos\ProjetoBancoPronto\ProjetoBanco-master\bin\Debug\ProjetoBanco.pdb
+D:\Estudo\Projetos\NovoProjetoBanco\bin\Debug\ProjetoBanco.exe.config
+D:\Estudo\Projetos\NovoProjetoBanco\bin\Debug\ProjetoBanco.exe
+D:\Estudo\Projetos\NovoProjetoBanco\bin\Debug\ProjetoBanco.pdb
+D:\Estudo\Projetos\NovoProjetoBanco\obj\Debug\ProjetoBanco.csprojAssemblyReference.cache
+D:\Estudo\Projetos\NovoProjetoBanco\obj\Debug\ProjetoBanco.Form1.resources
+D:\Estudo\Projetos\NovoProjetoBanco\obj\Debug\ProjetoBanco.FormCadastroConta.resources
+D:\Estudo\Projetos\NovoProjetoBanco\obj\Debug\ProjetoBanco.Properties.Resources.resources
+D:\Estudo\Projetos\NovoProjetoBanco\obj\Debug\ProjetoBanco.csproj.GenerateResource.cache
+D:\Estudo\Projetos\NovoProjetoBanco\obj\Debug\ProjetoBanco.csproj.CoreCompileInputs.cache
+D:\Estudo\Projetos\NovoProjetoBanco\obj\Debug\ProjetoBanco.exe
+D:\Estudo\Projetos\NovoProjetoBanco\obj\Debug\ProjetoBanco.pdb

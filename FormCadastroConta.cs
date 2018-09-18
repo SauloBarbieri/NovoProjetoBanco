@@ -34,29 +34,14 @@ namespace ProjetoBanco
             //novaConta.Numero = Convert.ToInt32(textoNumero.Text);
 
             this.formPrincipal.AdicionaConta(NovoCodigo, NovoTitular);
-        }
-
-        private void botaoCadastro_Click(object sender, EventArgs e)
-        {
-            //Conta novaConta = new ContaCorrente();
-
-            //novaConta.CodigoDaConta = Convert.ToInt32(textNovoCodigo.Text);
-
-            //novaConta.TitularDaConta = new Cliente(textoTitular.Text);
-            //novaConta.CodigoDaConta = Convert.ToInt32(textoNumero.Text);
-
-            //this.formPrincipal.AdicionaConta(novaConta);
-
-            int novoCodigo = Convert.ToInt32(textNovoCodigo.Text);
-            string novoTitular = textNovoTitular.Text;
-
-            this.formPrincipal.AdicionaConta(novoCodigo,novoTitular);
 
             // limpa as informações no TextBox
             textNovoCodigo.Clear();
             textNovoTitular.Clear();
 
         }
+
+      
 
     }
 
