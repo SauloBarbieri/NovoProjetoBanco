@@ -58,6 +58,8 @@ namespace ProjetoBanco
 
                 // mostrar no ComboBox o índice da Conta na Array
                 //comboContas.Items.Add(numeroDeContas);
+
+                //correção do index para aparecer o nome do Titular da Conta
                 comboContas.Items.Add(contasCorrentes[numeroDeContas].TitularDaConta);
 
                 numeroDeContas++;
