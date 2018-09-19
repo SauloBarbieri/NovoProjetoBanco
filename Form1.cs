@@ -57,7 +57,8 @@ namespace ProjetoBanco
 
 
                 // mostrar no ComboBox o índice da Conta na Array
-                comboContas.Items.Add(numeroDeContas);
+                //comboContas.Items.Add(numeroDeContas);
+                comboContas.Items.Add(contasCorrentes[numeroDeContas].TitularDaConta);
 
                 numeroDeContas++;
             }
@@ -204,7 +205,7 @@ namespace ProjetoBanco
             int indice = comboContas.SelectedIndex;
 
             textoCodigo.Text = Convert.ToString(contasCorrentes[indice].CodigoDaConta);
-            textoTitular.Text = Convert.ToString(contasCorrentes[indice].TitularDaConta);
+            textoTitular.Text = contasCorrentes[indice].TitularDaConta;
             textoSaldo.Text = Convert.ToString(contasCorrentes[indice].SaldoDaConta);
 
         }
